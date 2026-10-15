@@ -1,0 +1,76 @@
+================================================================================
+          PANDUAN LENGKAP APLIKASI OFFLINE XAMPP - RAW STUDIO WATERMARK DB
+          Akses Browser: http://172.16.2.23/watermarkdb atau http://localhost/watermarkdb
+================================================================================
+
+Aplikasi ini dapat dijalankan secara 100% OFFLINE pada komputer Anda menggunakan
+XAMPP (Apache + MySQL), tanpa memerlukan koneksi internet!
+
+--------------------------------------------------------------------------------
+LANGKAH 1: EKSTRAK FOLDER KE HTDOCS XAMPP
+--------------------------------------------------------------------------------
+1. Buka folder instalasi XAMPP di komputer Anda:
+   Biasanya di: C:\xampp\htdocs\
+
+2. Buat folder baru dengan nama "watermarkdb" di dalam folder htdocs:
+   Lokasi lengkap: C:\xampp\htdocs\watermarkdb\
+
+3. Ekstrak (Unzip) seluruh isi file ZIP ini langsung ke folder "watermarkdb".
+   Pastikan struktur file di dalamnya adalah:
+   C:\xampp\htdocs\watermarkdb\
+     ├── index.html                  (Halaman aplikasi studio utama)
+     ├── index.php                   (Entry point Apache XAMPP)
+     ├── api.php                     (API log & status database MySQL)
+     ├── db.php                      (Konfigurasi koneksi MySQL)
+     ├── watermarkdb.sql             (File skrip struktur database)
+     ├── .htaccess                   (Konfigurasi Apache)
+     ├── PANDUAN_XAMPP.txt           (Petunjuk ini)
+     └── assets\
+           ├── index-*.js            (Script aplikasi offline)
+           └── index-*.css           (Styling tampilan)
+
+--------------------------------------------------------------------------------
+LANGKAH 2: JALANKAN XAMPP CONTROL PANEL
+--------------------------------------------------------------------------------
+1. Buka aplikasi "XAMPP Control Panel" di Windows.
+2. Klik tombol "Start" di samping Apache.
+3. Klik tombol "Start" di samping MySQL.
+   (Pastikan kedua modul bertuliskan "Running" dan berlatar belakang hijau).
+
+--------------------------------------------------------------------------------
+LANGKAH 3: IMPOR DATABASE KE PHPMYADMIN (OPSIONAL TAPI DIREKOMENDASIKAN)
+--------------------------------------------------------------------------------
+1. Buka browser (Google Chrome atau Microsoft Edge), lalu buka:
+   http://localhost/phpmyadmin/
+
+2. Klik menu "Import" atau "Impor" di bagian atas halaman phpMyAdmin.
+3. Klik tombol "Choose File" / "Pilih File", lalu arahkan ke:
+   C:\xampp\htdocs\watermarkdb\watermarkdb.sql
+4. Klik tombol "Import" / "Kirim" di bagian paling bawah.
+5. Selesai! Database "watermarkdb" dengan tabel `watermark_presets`,
+   `batch_sessions`, `photo_records`, dan `app_settings` telah siap.
+
+--------------------------------------------------------------------------------
+LANGKAH 4: BUKA DAN GUNAKAN APLIKASI
+--------------------------------------------------------------------------------
+- Buka dari komputer sendiri:
+  http://localhost/watermarkdb
+
+- Buka dari komputer / laptop lain di jaringan LAN / Wi-Fi lokal:
+  http://172.16.2.23/watermarkdb
+  (Pastikan IP komputer server Anda adalah 172.16.2.23 dan port 80 tidak diblokir Firewall Windows).
+
+--------------------------------------------------------------------------------
+CARA KERJA FITUR "SIMPAN KE KOMPUTER" (BROWSE FOLDER PILIHAN):
+--------------------------------------------------------------------------------
+- Saat Anda menekan tombol "Simpan ke Komputer":
+  Jendela penjelajah folder komputer asli (File Explorer / Browse Folder)
+  akan otomatis terbuka di layar.
+- Anda bebas memilih folder mana saja di harddisk (misalnya D:\Foto_Hasil_Watermark\
+  atau C:\xampp\htdocs\watermarkdb\output\).
+- Seluruh foto RAW kamera (CR3, CR2, ARW, NEF, DNG, dll) yang telah Anda pilih
+  akan langsung diproses menjadi JPEG 1024x800 dengan watermark dan auto-adjust,
+  kemudian disimpan langsung ke dalam folder pilihan Anda tersebut!
+
+Selamat menggunakan RAW Studio Offline di XAMPP!
+================================================================================
